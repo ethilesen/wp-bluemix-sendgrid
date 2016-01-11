@@ -15,7 +15,7 @@
       if($vcap) {
          $data = json_decode($vcap, true);
          if(!is_null($data) && isset($data['sendgrid'])) {
-            $creds = $data['sendgrid'][0]['credentials'];
+            $creds = $data['user-provided']['sendgrid'][0]['credentials'];
 
             update_option( 'sendgrid_user', $creds['username'] );
             update_option( 'sendgrid_pwd', $creds['password'] );
